@@ -202,7 +202,7 @@
             <h5 class="m-0">Manage Products</h5>
             <p-iconfield>
               <p-inputicon styleClass="pi pi-search" />
-              <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')"
+              <input pInputText type="text" (input)="dt.filterGlobal($any($event.target).value, 'contains')"
                 placeholder="Search..." />
             </p-iconfield>
           </div>
