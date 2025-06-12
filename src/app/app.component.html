@@ -1,1 +1,351 @@
-<app-categoria></app-categoria>
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<style>
+  :host {
+    --bright-blue: oklch(51.01% 0.274 263.83);
+    --electric-violet: oklch(53.18% 0.28 296.97);
+    --french-violet: oklch(47.66% 0.246 305.88);
+    --vivid-pink: oklch(69.02% 0.277 332.77);
+    --hot-red: oklch(61.42% 0.238 15.34);
+    --orange-red: oklch(63.32% 0.24 31.68);
+
+    --gray-900: oklch(19.37% 0.006 300.98);
+    --gray-700: oklch(36.98% 0.014 302.71);
+    --gray-400: oklch(70.9% 0.015 304.04);
+
+    --red-to-pink-to-purple-vertical-gradient: linear-gradient(180deg,
+        var(--orange-red) 0%,
+        var(--vivid-pink) 50%,
+        var(--electric-violet) 100%);
+
+    --red-to-pink-to-purple-horizontal-gradient: linear-gradient(90deg,
+        var(--orange-red) 0%,
+        var(--vivid-pink) 50%,
+        var(--electric-violet) 100%);
+
+    --pill-accent: var(--bright-blue);
+
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+      "Segoe UI Symbol";
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1 {
+    font-size: 3.125rem;
+    color: var(--gray-900);
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: -0.125rem;
+    margin: 0;
+    font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+      "Segoe UI Symbol";
+  }
+
+  p {
+    margin: 0;
+    color: var(--gray-700);
+  }
+
+  main {
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    box-sizing: inherit;
+    position: relative;
+  }
+
+  .angular-logo {
+    max-width: 9.2rem;
+  }
+
+  .content {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 700px;
+    margin-bottom: 3rem;
+  }
+
+  .content h1 {
+    margin-top: 1.75rem;
+  }
+
+  .content p {
+    margin-top: 1.5rem;
+  }
+
+  .divider {
+    width: 1px;
+    background: var(--red-to-pink-to-purple-vertical-gradient);
+    margin-inline: 0.5rem;
+  }
+
+  .pill-group {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+  }
+
+  .pill {
+    display: flex;
+    align-items: center;
+    --pill-accent: var(--bright-blue);
+    background: color-mix(in srgb, var(--pill-accent) 5%, transparent);
+    color: var(--pill-accent);
+    padding-inline: 0.75rem;
+    padding-block: 0.375rem;
+    border-radius: 2.75rem;
+    border: 0;
+    transition: background 0.3s ease;
+    font-family: var(--inter-font);
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.4rem;
+    letter-spacing: -0.00875rem;
+    text-decoration: none;
+  }
+
+  .pill:hover {
+    background: color-mix(in srgb, var(--pill-accent) 15%, transparent);
+  }
+
+  .pill-group .pill:nth-child(6n + 1) {
+    --pill-accent: var(--bright-blue);
+  }
+
+  .pill-group .pill:nth-child(6n + 2) {
+    --pill-accent: var(--french-violet);
+  }
+
+  .pill-group .pill:nth-child(6n + 3),
+  .pill-group .pill:nth-child(6n + 4),
+  .pill-group .pill:nth-child(6n + 5) {
+    --pill-accent: var(--hot-red);
+  }
+
+  .pill-group svg {
+    margin-inline-start: 0.25rem;
+  }
+
+  .social-links {
+    display: flex;
+    align-items: center;
+    gap: 0.73rem;
+    margin-top: 1.5rem;
+  }
+
+  .social-links path {
+    transition: fill 0.3s ease;
+    fill: var(--gray-400);
+  }
+
+  .social-links a:hover svg path {
+    fill: var(--gray-900);
+  }
+
+  @media screen and (max-width: 650px) {
+    .content {
+      flex-direction: column;
+      width: max-content;
+    }
+
+    .divider {
+      height: 1px;
+      width: 100%;
+      background: var(--red-to-pink-to-purple-horizontal-gradient);
+      margin-block: 1.5rem;
+    }
+  }
+</style>
+
+<main class="main">
+  <div class="content">
+    <div class="card">
+      <p-toast />
+      <p-toolbar styleClass="mb-6">
+        <ng-template #start>
+          <p-button label="New" icon="pi pi-plus" class="mr-2" (onClick)="openNew()" />
+          <p-button severity="danger" label="Delete" icon="pi pi-trash" outlined (onClick)="deleteSelectedProducts()"
+            [disabled]="!selectedProducts || !selectedProducts.length" />
+        </ng-template>
+
+        <ng-template #end>
+          <p-fileUpload mode="basic" accept="image/*" [maxFileSize]="1000000" label="Import" chooseLabel="Import" auto
+            customUpload class="mr-2 inline-block" [chooseButtonProps]="{ severity: 'secondary' }" />
+          <p-button label="Export" icon="pi pi-upload" severity="secondary" (onClick)="exportCSV($event)" />
+        </ng-template>
+      </p-toolbar>
+
+      <p-table #dt [value]="products" [rows]="10" [columns]="cols" [paginator]="true"
+        [globalFilterFields]="['name', 'country.name', 'representative.name', 'status']"
+        [tableStyle]="{ 'min-width': '75rem' }" [(selection)]="selectedProducts" [rowHover]="true" dataKey="id"
+        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [showCurrentPageReport]="true">
+        <ng-template #caption>
+          <div class="flex items-center justify-between">
+            <h5 class="m-0">Manage Products</h5>
+            <p-iconfield>
+              <p-inputicon styleClass="pi pi-search" />
+              <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')"
+                placeholder="Search..." />
+            </p-iconfield>
+          </div>
+        </ng-template>
+        <ng-template #header>
+          <tr>
+            <th style="width: 3rem">
+              <p-tableHeaderCheckbox />
+            </th>
+            <th style="min-width: 16rem">Code</th>
+            <th pSortableColumn="name" style="min-width:16rem">
+              Name
+              <p-sortIcon field="name" />
+            </th>
+            <th>Image</th>
+            <th pSortableColumn="price" style="min-width: 8rem">
+              Price
+              <p-sortIcon field="price" />
+            </th>
+            <th pSortableColumn="category" style="min-width:10rem">
+              Category
+              <p-sortIcon field="category" />
+            </th>
+            <th pSortableColumn="rating" style="min-width: 12rem">
+              Reviews
+              <p-sortIcon field="rating" />
+            </th>
+            <th pSortableColumn="inventoryStatus" style="min-width: 12rem">
+              Status
+              <p-sortIcon field="inventoryStatus" />
+            </th>
+            <th style="min-width: 12rem"></th>
+          </tr>
+        </ng-template>
+        <ng-template #body let-product>
+          <tr>
+            <td style="width: 3rem">
+              <p-tableCheckbox [value]="product" />
+            </td>
+            <td style="min-width: 12rem">{{ product.code }}</td>
+            <td style="min-width: 16rem">{{ product.name }}</td>
+            <td>
+              <img [src]="'https://primefaces.org/cdn/primeng/images/demo/product/' + product.image"
+                [alt]="product.name" style="width: 64px" class="rounded" />
+            </td>
+            <td>{{ product.price | currency: 'USD' }}</td>
+            <td>{{ product.category }}</td>
+            <td>
+              <p-rating [(ngModel)]="product.rating" [readonly]="true" [cancel]="false" />
+            </td>
+            <td>
+              <p-tag [value]="product.inventoryStatus" [severity]="getSeverity(product.inventoryStatus)" />
+            </td>
+            <td>
+              <p-button icon="pi pi-pencil" class="mr-2" [rounded]="true" [outlined]="true"
+                (click)="editProduct(product)" />
+              <p-button icon="pi pi-trash" severity="danger" [rounded]="true" [outlined]="true"
+                (click)="deleteProduct(product)" />
+            </td>
+          </tr>
+        </ng-template>
+        <ng-template #summary>
+          <div class="flex items-center justify-between">In total there are {{ products ? products.length : 0 }}
+            products.</div>
+        </ng-template>
+      </p-table>
+
+      <p-dialog [(visible)]="productDialog" [style]="{ width: '450px' }" header="Product Details" [modal]="true">
+        <ng-template #content>
+          <div class="flex flex-col gap-6">
+            <img [src]="'https://primefaces.org/cdn/primeng/images/demo/product/' + product.image" [alt]="product.image"
+              class="block m-auto pb-4" *ngIf="product.image" />
+            <div>
+              <label for="name" class="block font-bold mb-3">Name</label>
+              <input type="text" pInputText id="name" [(ngModel)]="product.name" required autofocus fluid />
+              <small class="text-red-500" *ngIf="submitted && !product.name">Name is required.</small>
+            </div>
+            <div>
+              <label for="description" class="block font-bold mb-3">Description</label>
+              <textarea id="description" pTextarea [(ngModel)]="product.description" required rows="3" cols="20"
+                fluid></textarea>
+            </div>
+
+            <div>
+              <label for="inventoryStatus" class="block font-bold mb-3">Inventory Status</label>
+              <p-select [(ngModel)]="product.inventoryStatus" inputId="inventoryStatus" [options]="statuses"
+                optionLabel="label" placeholder="Select a Status" fluid />
+            </div>
+
+            <div>
+              <span class="block font-bold mb-4">Category</span>
+              <div class="grid grid-cols-12 gap-4">
+                <div class="flex items-center gap-2 col-span-6">
+                  <p-radiobutton id="category1" name="category" value="Accessories" [(ngModel)]="product.category" />
+                  <label for="category1">Accessories</label>
+                </div>
+                <div class="flex items-center gap-2 col-span-6">
+                  <p-radiobutton id="category2" name="category" value="Clothing" [(ngModel)]="product.category" />
+                  <label for="category2">Clothing</label>
+                </div>
+                <div class="flex items-center gap-2 col-span-6">
+                  <p-radiobutton id="category3" name="category" value="Electronics" [(ngModel)]="product.category" />
+                  <label for="category3">Electronics</label>
+                </div>
+                <div class="flex items-center gap-2 col-span-6">
+                  <p-radiobutton id="category4" name="category" value="Fitness" [(ngModel)]="product.category" />
+                  <label for="category4">Fitness</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-12 gap-4">
+              <div class="col-span-6">
+                <label for="price" class="block font-bold mb-3">Price</label>
+                <p-inputnumber id="price" [(ngModel)]="product.price" mode="currency" currency="USD" locale="en-US"
+                  fluid />
+              </div>
+              <div class="col-span-6">
+                <label for="quantity" class="block font-bold mb-3">Quantity</label>
+                <p-inputnumber id="quantity" [(ngModel)]="product.quantity" fluid />
+              </div>
+            </div>
+          </div>
+        </ng-template>
+
+        <ng-template #footer>
+          <p-button label="Cancel" icon="pi pi-times" text (click)="hideDialog()" />
+          <p-button label="Save" icon="pi pi-check" (click)="saveProduct()" />
+        </ng-template>
+      </p-dialog>
+
+      <p-confirmDialog [style]="{ width: '450px' }" />
+    </div>
+  </div>
+</main>
+
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+
+<router-outlet />
