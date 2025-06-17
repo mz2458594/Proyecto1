@@ -24,6 +24,8 @@ import { ProductService } from '../../src/service/productservice';
 import { DropdownModule } from 'primeng/dropdown';
 import { RouterOutlet } from '@angular/router';
 import { HttpClient, HttpClientModule, HttpHandler } from '@angular/common/http';
+import { AccordionModule } from 'primeng/accordion';
+
 
 
 interface Column {
@@ -39,7 +41,7 @@ interface ExportColumn {
 
 @Component({
   selector: 'app-root',
-  imports: [HttpClientModule,ButtonModule, TableModule, Dialog, SelectModule, ToastModule, ToolbarModule, ConfirmDialog, InputTextModule, TextareaModule, CommonModule, FileUpload, DropdownModule, Tag, RadioButton, Rating, InputTextModule, FormsModule, InputNumber, IconFieldModule, InputIconModule, RouterOutlet],
+  imports: [HttpClientModule,AccordionModule,ButtonModule, TableModule, Dialog, SelectModule, ToastModule, ToolbarModule, ConfirmDialog, InputTextModule, TextareaModule, CommonModule, FileUpload, DropdownModule, Tag, RadioButton, Rating, InputTextModule, FormsModule, InputNumber, IconFieldModule, InputIconModule, RouterOutlet],
   templateUrl: './app.component.html',
   standalone: true,
   styleUrl: './app.component.scss',
