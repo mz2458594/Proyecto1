@@ -11,7 +11,7 @@ import { TextareaModule } from 'primeng/textarea';
 import { CommonModule } from '@angular/common';
 import { FileUpload } from 'primeng/fileupload';
 import { SelectModule } from 'primeng/select';
-import { Tag } from 'primeng/tag';
+import { Tag, TagModule } from 'primeng/tag';
 import { RadioButton } from 'primeng/radiobutton';
 import { Rating } from 'primeng/rating';
 import { FormsModule } from '@angular/forms';
@@ -25,7 +25,7 @@ import { DropdownModule } from 'primeng/dropdown';
 import { RouterOutlet } from '@angular/router';
 import { HttpClient, HttpClientModule, HttpHandler } from '@angular/common/http';
 import { AccordionModule } from 'primeng/accordion';
-
+import { CarouselModule } from 'primeng/carousel';
 
 
 interface Column {
@@ -41,7 +41,7 @@ interface ExportColumn {
 
 @Component({
   selector: 'app-root',
-  imports: [HttpClientModule,AccordionModule,ButtonModule, TableModule, Dialog, SelectModule, ToastModule, ToolbarModule, ConfirmDialog, InputTextModule, TextareaModule, CommonModule, FileUpload, DropdownModule, Tag, RadioButton, Rating, InputTextModule, FormsModule, InputNumber, IconFieldModule, InputIconModule, RouterOutlet],
+  imports: [HttpClientModule,CarouselModule,TagModule,AccordionModule,ButtonModule, TableModule, Dialog, SelectModule, ToastModule, ToolbarModule, ConfirmDialog, InputTextModule, TextareaModule, CommonModule, FileUpload, DropdownModule, Tag, RadioButton, Rating, InputTextModule, FormsModule, InputNumber, IconFieldModule, InputIconModule, RouterOutlet],
   templateUrl: './app.component.html',
   standalone: true,
   styleUrl: './app.component.scss',
@@ -56,6 +56,8 @@ interface ExportColumn {
 })
 export class AppComponent implements OnInit {
   productDialog: boolean = false;
+
+  responsiveOptions: any[] | undefined;
 
   products!: Product[];
 

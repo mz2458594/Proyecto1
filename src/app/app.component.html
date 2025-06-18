@@ -3,41 +3,69 @@
 </div>
 
 <div class="card">
-    <p-accordion>
-        <p-accordion-panel value="0">
-            <p-accordion-header>Alimentos y Bebidas</p-accordion-header>
-            <p-accordion-content>
-                <p class="m-0">
-                    Ofrece una amplia variedad de productos comestibles para el consumo diario. Incluye alimentos frescos, 
-                    enlatados, congelados, snacks, bebidas frías y calientes, además de productos especiales como orgánicos, 
-                    veganos o sin gluten. Esta categoría está pensada para satisfacer tanto necesidades básicas como preferencias 
-                    alimenticias específicas.
-                </p>
-            </p-accordion-content>
-        </p-accordion-panel>
-        <p-accordion-panel value="1">
-            <p-accordion-header>Ropa y Moda</p-accordion-header>
-            <p-accordion-content>
-                <p class="m-0">
-                  Contiene una selección de prendas de vestir para hombres, mujeres y niños, así como calzado, accesorios y ropa 
-                  deportiva. Desde estilos casuales hasta atuendos formales, esta categoría permite a los usuarios encontrar las 
-                  mejores opciones para cada ocasión, siempre siguiendo las últimas tendencias de la moda.
-                </p>
-            </p-accordion-content>
-        </p-accordion-panel>
-        <p-accordion-panel value="2">
-            <p-accordion-header>Electrónica</p-accordion-header>
-            <p-accordion-content>
-                <p class="m-0">
-                    Categoría dedicada a dispositivos tecnológicos de última generación como teléfonos inteligentes, laptops, 
-                    televisores, cámaras digitales y parlantes. Incluye también accesorios como cargadores, fundas, memorias USB, 
-                    audífonos y productos relacionados con el mundo digital. Ideal para quienes buscan mantenerse conectados y a la 
-                    vanguardia tecnológica.
-                </p>
-            </p-accordion-content>
-        </p-accordion-panel>
-    </p-accordion>
+  <p-accordion>
+    <p-accordion-panel value="0">
+      <p-accordion-header>Alimentos y Bebidas</p-accordion-header>
+      <p-accordion-content>
+        <p class="m-0">
+          Ofrece una amplia variedad de productos comestibles para el consumo diario. Incluye alimentos frescos,
+          enlatados, congelados, snacks, bebidas frías y calientes, además de productos especiales como orgánicos,
+          veganos o sin gluten. Esta categoría está pensada para satisfacer tanto necesidades básicas como preferencias
+          alimenticias específicas.
+        </p>
+      </p-accordion-content>
+    </p-accordion-panel>
+    <p-accordion-panel value="1">
+      <p-accordion-header>Ropa y Moda</p-accordion-header>
+      <p-accordion-content>
+        <p class="m-0">
+          Contiene una selección de prendas de vestir para hombres, mujeres y niños, así como calzado, accesorios y ropa
+          deportiva. Desde estilos casuales hasta atuendos formales, esta categoría permite a los usuarios encontrar las
+          mejores opciones para cada ocasión, siempre siguiendo las últimas tendencias de la moda.
+        </p>
+      </p-accordion-content>
+    </p-accordion-panel>
+    <p-accordion-panel value="2">
+      <p-accordion-header>Electrónica</p-accordion-header>
+      <p-accordion-content>
+        <p class="m-0">
+          Categoría dedicada a dispositivos tecnológicos de última generación como teléfonos inteligentes, laptops,
+          televisores, cámaras digitales y parlantes. Incluye también accesorios como cargadores, fundas, memorias USB,
+          audífonos y productos relacionados con el mundo digital. Ideal para quienes buscan mantenerse conectados y a
+          la
+          vanguardia tecnológica.
+        </p>
+      </p-accordion-content>
+    </p-accordion-panel>
+  </p-accordion>
 </div>
+
+<!-- Carousel terminado -->
+<div style="justify-self: center; margin: 20px; font-size: x-large;">Carrusel de productos</div>
+<p-carousel [value]="products" [numVisible]="4" [numScroll]="1" [circular]="false" [autoplayInterval]="3000" [responsiveOptions]="responsiveOptions"> 
+  <ng-template let-product #item>
+    <div style=" width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; padding: 10px; box-sizing: border-box;">
+      <div style=" display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%; max-width: 325px; background-color: #1e1e1e; border-radius: 8px; padding: 10px; gap: 5px;">
+        <div style="margin-bottom: 4px; display: flex; align-items: center; justify-content: center;">
+          <div style="position: relative;">
+            <img src="https://primefaces.org/cdn/primeng/images/demo/product/{{ product.image }}" [alt]="product.name"
+              style="width: 100%; height: 100%; border-radius: 5px;" />
+            <p-tag [value]="product.inventoryStatus" [severity]="getSeverity(product.inventoryStatus)" class="posicion"
+              [ngStyle]="{ 'left.px': 5, 'top.px': 5 }" />
+          </div>
+        </div>
+        <div style="margin-bottom: 4px; font-size: medium;">{{ product.name }}</div>
+        <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
+          <div style="margin-top: 0px; font-size: x-large;">{{ '$' + product.price }}</div>
+          <span style="display: flex; gap: 4px;">
+            <p-button icon="pi pi-heart" severity="secondary" [outlined]="true" />
+            <p-button icon="pi pi-shopping-cart" />
+          </span>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</p-carousel>
 
 <main class="main">
   <div class="content">
